@@ -53,8 +53,11 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         if (arr1.length != arr2.length) return false;
-        if (arr1.length == 0 || arr2.length == 0) return false;
-
+        if (arr1.length == 0 || arr2.length == 0){
+            if (arr1.length == arr2.length) return true;
+            else return false;
+        }
+        
         for (int i = 0; i < arr1.length; i++){
             if (arr1[i] != arr2[i]) return false;
         }
@@ -176,6 +179,10 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         boolean equal = true;
+        if (str1.length() == 0 || str2.length() == 0){
+            if (str1.length() == str2.length()) return 0;
+            else return -2;
+        }
 
 
         for (int i = 0; i < str1.length(); i++){
