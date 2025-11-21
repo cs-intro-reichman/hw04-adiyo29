@@ -4,7 +4,7 @@ public class Primes {
         boolean[] primes = new boolean[n+1];
         primes[0] = primes[1] = false;
         int primeCounters = 0;
-        for ( int i = 2; i < n; i++){
+        for ( int i = 2; i <= n; i++){
             primes[i] = true;
         }
         int prime = 2;
@@ -20,7 +20,7 @@ public class Primes {
                 }
             }
         System.out.println("Prime numbers up to " + n + ":");
-        for (int i = 2; i < n; i++){
+        for (int i = 2; i <= n; i++){
             if(primes[i] == true) {
                 System.out.println(i);
                 primeCounters++;
