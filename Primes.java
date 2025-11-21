@@ -2,7 +2,8 @@ public class Primes {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
         boolean[] primes = new boolean[n+1];
-            primes[0] = primes[1] = false;
+        primes[0] = primes[1] = false;
+        int primeCounters = 0;
         for ( int i = 2; i < n; i++){
             primes[i] = true;
         }
@@ -20,11 +21,18 @@ public class Primes {
             }
         System.out.println("Prime numbers up to " + n + ":");
         for (int i = 2; i < n; i++){
-            if(primes[i] == true) System.out.println(i);
-        }
+            if(primes[i] == true) {
+                System.out.println(i);
+                primeCounters++;
 
+            }
         }
+        double percentages = ((double)primeCounters / n) * 100;
+        System.out.println("n: " + n + "primecounter: " + primeCounters + " percent " + percentages);
+        System.out.println("There are " + primeCounters + " primes between 2 and " + n + " (" + (int) percentages + "% are ptimes)" );
 
     }
+
+}
     
 

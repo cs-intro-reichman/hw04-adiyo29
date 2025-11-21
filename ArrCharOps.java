@@ -5,15 +5,12 @@ public class ArrCharOps {
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-                char[] arr3 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
 
-      /*   System.out.println(str);  // Prints the string
+        System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of characters
         println(arr2);
         System.out.println(charAt(arr1,2)); 
-        System.out.println(charAt(arr2,0));      
-    System.out.println(equals(arr1, arr2));
-    System.out.println(equals(arr3, arr2));
+        System.out.println(charAt(arr2,0));     
         System.out.println(indexOf(arr1,'l'));  
         System.out.println(indexOf(arr1,'l',3)); 
         System.out.println(lastIndexOf(arr1, 'l'));
@@ -22,8 +19,6 @@ public class ArrCharOps {
         
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
-
-        */
 
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
