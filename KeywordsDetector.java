@@ -1,5 +1,7 @@
 public class KeywordsDetector {
     public static void main(String[] args) {
+
+        
         String[] sentences = {
             "Our product will transform the market",
             "Programming is both painful and engaging",
@@ -13,14 +15,49 @@ public class KeywordsDetector {
             "Our new technology presents a significant paradigm shift",
             "Effective presentations must be clear, concise, and humble"
         };
+
         // Some keywords that typically signal bullshit contents in business presentations 
         String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
         detectAndPrint(sentences, keywords);
+
     }
 
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        int n = keywords.length;
+        for (int x=0; x < sentences.length; x++){
+            sentences[x] = lowerCase(sentences[x]);
+        }
+        for (int x=0; x < keywords.length; x++){
+            keywords[x] = lowerCase(keywords[x]);
+        }
+        for (int i=0; i < n; i++){
+            for (int x=0; x < sentences.length; x++){
+                if(contains(sentences[x], keywords[i])) System.out.println(sentences[x]);
+            }
+        }
+
     }
+      public static String lowerCase(String str) {
+         String word = "";
+
+            for (int i = 0; i < str.length(); i++){
+            int a = str.charAt(i);
+            if (64 < a && a < 91) a = a +32;
+            word = word + (char) a;
+            }
+                    return word;
+    }
+
+    public static boolean contains(String str1, String str2) {
+        String a = str1;
+        String b = str2;
+        if (a.indexOf(b) == -1) return false;
+        else return true;        
+        
+    }
+
 }
+
+
