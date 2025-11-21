@@ -184,8 +184,17 @@ public class ArrCharOps {
         for (int i = 0; i < str1.length(); i++){
             int a = str1.charAt(i);
             int b = str2.charAt(i);
-            if (64 < a && a < 91) a = a +32;
-            if (64 < b && b < 91) b = b +32;
+            if (64 < a && a < 91) {
+                if ((a + 32) == b) return -1; //check if its the same letter but one capital
+                if (a == b) { // this is for the case both letters are Capital. i don't want
+                                    //  to change a to smallet and then in next lines when checking b i can be wromg
+                a = a + 32;
+                b = b + 32;
+                }
+            }
+            if (64 < b && b < 91) {
+                if (a == (b + 32)) return 1; // check if its the same letter but one capital
+                    b = b +32;
             if (a > b)
             return 1;
             if (a < b) return -1;
@@ -196,6 +205,8 @@ public class ArrCharOps {
                                             // maybe equal. first by comparing their length
           if (equal == true) return 0;
         }
-        return -1;
+    }
+            return -1;
+
     }
 }
