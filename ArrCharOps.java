@@ -6,7 +6,7 @@ public class ArrCharOps {
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
 
-        System.out.println(str);  // Prints the string
+      /*  System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of characters
         println(arr2);
         System.out.println(charAt(arr1,2)); 
@@ -27,8 +27,9 @@ public class ArrCharOps {
         System.out.println(compareTo("apple", "banana"));
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
+*/ 
 
-        
+        System.out.println(compareTo("abc", "aBc"));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -180,7 +181,6 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
         boolean equal = true;
         if (str1.length() == 0 || str2.length() == 0) return -2;
-
         for (int i = 0; i < str1.length(); i++){
             int a = str1.charAt(i);
             int b = str2.charAt(i);
@@ -193,17 +193,19 @@ public class ArrCharOps {
                 }
             }
             if (64 < b && b < 91) {
-                if (a == (b + 32)) return 1; // check if its the same letter but one capital
-                    b = b +32;
+                if (a == (b + 32)) {
+                    return 1; // check if its the same letter but one capital
+                    }
+                b = b + 32;
+                }   
             if (a > b)
             return 1;
             if (a < b) return -1;
             if (a != b) equal = false;   
             if ( i + 1 >= str2.length() && str1.length() != str2.length()) return 1;
-        }
-        if (str1.length() == str2.length()){ // if for all letters in str1 we didnt find any greater then the same at str2 we check if they 
+            if (str1.length() == str2.length() && i == str1.length() - 1){ // if for all letters in str1 we didnt find any greater then the same at str2 we check if they 
                                             // maybe equal. first by comparing their length
-          if (equal == true) return 0;
+            if (equal == true) return 0;
         }
     }
             return -1;
