@@ -43,6 +43,7 @@ public class ArrCharOps {
     /** Returns the char value at the specified index. Assume that the array is non-empty.
      */
     public static char charAt(char[] arr, int index) {
+        if (arr.length == 0) return arr[0];
         
         return arr[index];
     }
@@ -52,6 +53,8 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) {
         if (arr1.length != arr2.length) return false;
+        if (arr1.length == 0 || arr2.length == 0) return false;
+
         for (int i = 0; i < arr1.length; i++){
             if (arr1[i] != arr2[i]) return false;
         }
@@ -63,6 +66,7 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int indexOf(char[] arr, char ch) {
+        if (arr.length == 0) return -1;
         for (int i = 0; i < arr.length; i++){
             if (arr[i] == ch) return i;
         }

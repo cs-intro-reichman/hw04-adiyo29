@@ -14,7 +14,9 @@ public class Primes {
                 int counter = prime;
                 while (counter < n - 1) {
                     counter = counter + prime;
-                    primes[counter] = false;         
+                    if (counter <= primes.length) primes[counter] = false; // this will make sure that im not exceeding the size of the arr.
+                                                                // if we take 7 and the size of the array is up to 50 i can try reach 57 without this check
+
                 }
 
                 }
