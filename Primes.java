@@ -28,8 +28,7 @@ public class Primes {
             }
         }
         double percentages = ((double)primeCounters / n) * 100;
-        System.out.println("n: " + n + "primecounter: " + primeCounters + " percent " + percentages);
-        System.out.println("There are " + primeCounters + " primes between 2 and " + n + " (" + (int) percentages + "% are ptimes)" );
+        System.out.println("There are " + primeCounters + " primes between 2 and " + n + " (" + (int) percentages + "% are primes)" );
 
     }
 

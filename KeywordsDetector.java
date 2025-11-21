@@ -27,6 +27,10 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         int n = keywords.length;
         String[] copySenteces = new String[sentences.length];
+        boolean[] foundSen = new boolean[sentences.length];
+        for (int i = 0; i < sentences.length; i++){
+            foundSen[i] = false;
+        }
         for (int i = 0; i < sentences.length; i++){
             copySenteces[i] = sentences[i];
         }
@@ -38,9 +42,15 @@ public class KeywordsDetector {
         }
         for (int i=0; i < n; i++){
             for (int x=0; x < sentences.length; x++){
-                if(contains(sentences[x], keywords[i])) System.out.println(copySenteces[x]);
+                if(contains(sentences[x], keywords[i])){
+                    foundSen[x] = true;
+                } 
             }
         }
+        for (int i = 0; i < sentences.length; i++){
+            if(foundSen[i] == true)System.out.println(copySenteces[i]);
+        }
+
 
     }
       public static String lowerCase(String str) {

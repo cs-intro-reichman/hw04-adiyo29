@@ -114,8 +114,8 @@ public class ArrCharOps {
         int n = endIndex - beginIndex;
         char[] subArr = new char[n];
 
-        for (int i = beginIndex; i < endIndex; i++){
-            subArr[i] = arr[i];
+        for (int i = beginIndex, x = 0; i < endIndex; i++, x++){
+            subArr[x] = arr[i];
         
         }
                return subArr;
